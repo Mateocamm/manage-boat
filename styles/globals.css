@@ -1,0 +1,54 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    color:#333;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h2,h4{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+.ant-picker-panels > *:first-child button.ant-picker-header-next-btn {
+  visibility: visible !important;
+}
+
+.ant-picker-panels > *:first-child button.ant-picker-header-super-next-btn {
+  visibility: visible !important;
+}
+
+.ant-picker-panels > *:last-child {
+  display: none !important;
+}
+
+.ant-picker-panel-container, .ant-picker-footer {
+  width: 280px !important;
+}
+
+.ant-picker-footer-extra > div {
+  flex-wrap: wrap !important; 
+}
+
+.calendar table td, .calendar table th {
+  width: 40px !important;
+}
+
+.calendar .months-container .month-container{
+  height: 220px !important;
+}
