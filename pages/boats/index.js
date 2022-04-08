@@ -8,48 +8,43 @@ import Image from "next/image";
 import LayaoutSimple from "../../components/LayaoutSimple";
 
 const ListBoat = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   max-width: 1024px;
   margin: auto;
-  padding: 20px 0;
+  gap: 16px;
+  margin-top: 16px;
 
   @media (max-width: 800px) {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
   }
 `;
 const BoatItem = styled.div`
-width: 100%;
-  max-width: 320px;
+  width: 100%;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (max-width: 800px) {
-    max-width: 100%;
-    box-shadow: initial;
-  }
 `;
 
 const BoatDetail = styled.div`
-  width: 90%;
-  padding: 10px;
+  width: 100%;
+  @media (max-width: 800px) {
+    width: 90%;
+  }
 `;
 
 const BoatImage = styled(Image)`
   width: 100%;
   height: 100%;
+  object-fit: cover;
   
 `;
 
 const ImageWrapper = styled.div`
   position: relative;
   overflow: hidden;
-  width: 280px;
+  width: 100%;
   height: 160px;
   
   box-shadow: 2px 0 10px rgba(100, 100, 100, 0.3);

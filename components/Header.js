@@ -26,7 +26,7 @@ const Title = styled.h1`
 function Header() {
   return (
     <HeaderPage>
-      <Title><Link href="/boats">Boats Indonesia B2B</Link></Title>
+      <Title><Link href="/boats">Rent Boat Labuan Bajo</Link></Title>
     </HeaderPage>
   );
 }
