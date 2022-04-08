@@ -51,7 +51,7 @@ const ImageWrapper = styled.div`
   overflow: hidden;
   width: 280px;
   height: 160px;
-  border-radius: 10px;
+  
   box-shadow: 2px 0 10px rgba(100, 100, 100, 0.3);
 
   @media (max-width: 800px) {
@@ -78,7 +78,7 @@ function index() {
             <BoatDetail>
               <h2>{boat.name}</h2>
               <p>Capacity: {boat.maxPerson} Person</p>
-              <Link href={`/boats/${boat.id}`}>
+              <Link href={`/boats/${boat.id}`} passHref>
                 <Button icon={<CalendarOutlined />}>View Calendar</Button>
               </Link>
             </BoatDetail>

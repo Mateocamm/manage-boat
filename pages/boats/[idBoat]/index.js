@@ -68,7 +68,7 @@ function index({ boat }) {
 
         <Calendar
           displayDisabledDataSource
-          year="2021"
+          year="2022"
           style="background"
           minDate={new Date(currentYear, 0, 1)}
           maxDate={new Date(currentYear, 0, 365)}
