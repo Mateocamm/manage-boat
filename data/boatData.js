@@ -4,6 +4,36 @@ export const BoatData = [
     name: "Kanha Liveboard",
     profilePicture: "/images/boats/kanha.jpg",
     maxPerson: 12,
+    rooms: [
+      {
+        name: "Double Room 1",
+        description: "",
+        picture: "/images/boats/kanha/double-room-kanha.jpg",
+        capacity: 2,
+        extraBed: 1,
+      },
+      {
+        name: "Double Room 2",
+        description: "",
+        picture: "/images/boats/kanha/double-room-kanha.jpg",
+        capacity: 2,
+        extraBed: 1,
+      },
+      {
+        name: "Share Room 2",
+        description: "",
+        picture: "/images/boats/kanha/share-room-kanha.jpg",
+        capacity: 4,
+        extraBed: 0,
+      },
+      {
+        name: "Share Room 2",
+        description: "",
+        picture: "/images/boats/kanha/share-room-kanha.jpg",
+        capacity: 4,
+        extraBed: 0,
+      },
+    ],
   },
 
   {
@@ -75,7 +105,8 @@ export const BoatData = [
   {
     id: 12,
     name: "Cirox",
-    profilePicture: "/images/boats/Kapal-Cirox-Liveaboard-Labuan-BAjo-1-scaled.webp",
+    profilePicture:
+      "/images/boats/Kapal-Cirox-Liveaboard-Labuan-BAjo-1-scaled.webp",
     maxPerson: 14,
   },
   {

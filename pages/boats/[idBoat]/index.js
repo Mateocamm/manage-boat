@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { BoatData } from "../../../data/boatData";
 import styles from "../../../styles/Home.module.css";
 import Calendar from "rc-year-calendar";
@@ -40,13 +40,30 @@ const TitleBoat = styled.h3`
   }
 `;
 
+const RoomList = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 16px;
+  text-align: center;
+
+  @media (max-width: 800px) {
+    font-size: 18px;
+    padding: 16px;
+  }
+
+  img{
+    width: 100%;
+  }
+`;
+
 const RangePicker = styled(DatePicker.RangePicker)`
   width: 100%;
 `;
 
 const FormBooking = styled(Form)`
   max-width: 600px;
-  margin:auto;
+  margin: auto;
 `;
 
 function index({ boat }) {
@@ -66,6 +83,17 @@ function index({ boat }) {
           <TitleBoat>{boat?.name}</TitleBoat>
         </Headerboat>
 
+        {boat.rooms && (
+          <RoomList>
+            {boat.rooms.map((item, index) => (
+              <div key={index}>
+                <img src={item.picture} alt={item.name} />
+                <h3>{item.name}</h3>
+              </div>
+            ))}
+          </RoomList>
+        )}
+
         <Calendar
           displayDisabledDataSource
           year="2022"
@@ -73,7 +101,14 @@ function index({ boat }) {
           minDate={new Date(currentYear, 0, 1)}
           maxDate={new Date(currentYear, 0, 365)}
         />
-        <Button type="primary" size="large" block onClick={() => setBookingVisible(true)}>Request Booking</Button>
+        <Button
+          type="primary"
+          size="large"
+          block
+          onClick={() => setBookingVisible(true)}
+        >
+          Request Booking
+        </Button>
         <Modal
           title={`Request Booking ${boat?.name}`}
           placement="center"
@@ -83,7 +118,6 @@ function index({ boat }) {
           visible={bookingVisible}
           key="center"
           okText="Request"
-          
         >
           <FormBooking layout="vertical">
             <Form.Item name="startDate" label="Dates">
@@ -95,7 +129,6 @@ function index({ boat }) {
             <Form.Item name="notes" label="Notes">
               <TextArea size="large" rows="5" />
             </Form.Item>
-            
           </FormBooking>
         </Modal>
       </div>
@@ -108,7 +141,7 @@ export default index;
 export async function getServerSideProps(context) {
   const id = context.params.idBoat;
 
-  const boat = BoatData.find((item) => item.id === Number(id))
+  const boat = BoatData.find((item) => item.id === Number(id));
 
   return {
     props: { boat: boat }, // will be passed to the page component as props
